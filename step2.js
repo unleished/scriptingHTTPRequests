@@ -1,16 +1,15 @@
-// while https is built-in to Node, it is a module, so it must be required
 var https = require('https');
 
 
-function getAndPrintHTMLChunks () {
+function getAndPrintHTML () {
 
   var requestOptions = {
-      host: 'sytantris.github.io',
-      path: '/http-examples/step1.html'
+    host: 'sytantris.github.io',
+    path: '/http-examples/step2.html'
   };
 
-
   /* Add your code here */
+
   https.get(requestOptions, function (response) {
 
   // set encoding of received data to UTF-8
@@ -18,18 +17,20 @@ function getAndPrintHTMLChunks () {
 
   // the callback is invoked when a `data` chunk is received
   response.on('data', function (data) {
-    console.log('Chunk Received. Data:', data);
+    var fullData = '';
+    fullData += data;
+    console.log('Chunk Received. Full Data:', fullData);
+
   });
 
   // the callback is invoked when all of the data has been received
   // (the `end` of the stream)
   response.on('end', function() {
-    console.log('Response stream complete.');
+    console.log('this is all the data: ');
   });
 
 });
 
 }
 
-getAndPrintHTMLChunks();
-
+getAndPrintHTML();
