@@ -2,7 +2,7 @@ var https = require('https');
 
 
 function getAndPrintHTML () {
-var fullData = '';
+var bufferStrings = '';
   var requestOptions = {
     host: 'sytantris.github.io',
     path: '/http-examples/step2.html'
@@ -15,7 +15,7 @@ var fullData = '';
 
   // the callback is invoked when a `data` chunk is received
   response.on('data', function (data) {
-    fullData += data;
+    bufferStrings += data;
     console.log('Chunk Received.');
 
   });

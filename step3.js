@@ -1,7 +1,7 @@
 var https = require('https');
 
 function getAndPrintHTML (options) {
-var fullOptions = '';
+var bufferStrings = '';
 
   /* Add your code here */
   https.get(options, function (response) {
@@ -11,7 +11,7 @@ var fullOptions = '';
 
     // the callback is invoked when a `data` chunk is received
     response.on('data', function (options) {
-      fullOptions += options;
+      bufferStrings += options;
       console.log('gathering options');
     });
 
