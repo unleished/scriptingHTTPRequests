@@ -9,7 +9,7 @@ var leekString = '';
 
 function toLeek (html) {
 
-  var leekArr = html.split(' ')
+  var leekArr = html.split('')
   console.log(leekString);
   for (var i = 0; i < leekArr.length; i++)
     var letter = leekArr[i];

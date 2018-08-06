@@ -2,7 +2,7 @@ var getHTML = require('./http-functions');
 
 var requestOptions = {
   host: 'sytantris.github.io',
-  path: '/http-examples/step5.html'
+  path: '/http-examples/step6/uppercase.html'
 };
 
 // print_uppercase.js : Transforms the html string into ALL CAPS and prints it to the console.
